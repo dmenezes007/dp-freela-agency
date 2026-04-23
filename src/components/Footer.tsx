@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export function Footer() {
   return (
-    <footer className="relative py-24 px-6 overflow-hidden mt-32 border-t border-white/5 pb-40">
+    <footer className="relative pt-24 px-6 overflow-hidden mt-32 border-t border-white/5">
       <div className="absolute inset-0 bg-[#00FFB2]/5 bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-[#00D1FF]/10 via-background to-background pointer-events-none" />
       
       <div className="max-w-7xl mx-auto relative z-10 flex flex-col items-center text-center">
@@ -35,14 +35,14 @@ export function Footer() {
         >
           Agendar Diagnóstico
         </motion.button>
-        
-        <div className="w-full h-12 bg-white/5 border-t border-white/10 px-10 flex items-center justify-between text-[9px] uppercase tracking-[0.2em] font-medium opacity-40 mt-32 absolute bottom-0 left-0">
-          <div className="flex gap-8">
-            <span>User Interface: Optimized</span>
-            <span className="hidden md:inline">Legal Logic: Integrated</span>
-          </div>
-          <div>DP FREELA © {new Date().getFullYear()}</div>
+      </div>
+
+      <div className="relative z-10 mt-24 -mx-6 px-6 md:px-10 h-12 bg-white/5 border-t border-white/10 flex items-center justify-between text-[9px] uppercase tracking-[0.2em] font-medium opacity-40">
+        <div className="flex gap-8">
+          <span>User Interface: Optimized</span>
+          <span className="hidden md:inline">Legal Logic: Integrated</span>
         </div>
+        <div>DP FREELA © {new Date().getFullYear()}</div>
       </div>
     </footer>
   );

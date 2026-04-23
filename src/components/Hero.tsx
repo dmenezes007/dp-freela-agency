@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export function Hero() {
   return (
@@ -14,7 +14,6 @@ export function Hero() {
            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
            className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel mb-8 border border-white/10"
         >
-          <Sparkles className="w-4 h-4 text-[#00D1FF]" />
           <span className="text-[12px] uppercase tracking-widest font-semibold text-[#00D1FF]">
             Micro-Diagnóstico Estratégico
           </span>

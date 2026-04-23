@@ -131,7 +131,82 @@ const CLUSTERS = [
       },
     ],
   },
+  {
+    id: "webstack",
+    title: "Implementação Web",
+    description: "Transformamos estratégia em produto digital funcional, performático e escalável.",
+    problem: "Execução travada por stack fragmentada e código sem padrão.",
+    diagnosis: "Falta de consistência técnica, componentização e fluxo de entrega contínua.",
+    solution: "Aplicação prática de fundamentos front-end e automações para acelerar produção.",
+    glowType: "glow-blue",
+    apps: [
+      {
+        id: "html",
+        name: "HTML5",
+        logoUrl: "https://cdn.simpleicons.org/html5/E34F26",
+        accentColor: "#E34F26",
+        color: "border-[#E34F26]/50",
+        text: "text-[#E34F26]",
+        bg: "bg-[#2A130E]",
+        functionalities: [
+          "Estrutura semântica para SEO e acessibilidade",
+          "Arquitetura de conteúdo para páginas de conversão",
+          "Markup limpo para facilitar manutenção e escala"
+        ]
+      },
+      {
+        id: "css",
+        name: "CSS3",
+        logoUrl: "https://cdn.simpleicons.org/css/1572B6",
+        accentColor: "#1572B6",
+        color: "border-[#1572B6]/50",
+        text: "text-[#1572B6]",
+        bg: "bg-[#0E1D2A]",
+        functionalities: [
+          "Design system com tokens visuais e consistência de interface",
+          "Layouts responsivos para desktop, tablet e mobile",
+          "Estados visuais e animações orientadas à experiência"
+        ]
+      },
+      {
+        id: "javascript",
+        name: "JavaScript",
+        logoUrl: "https://cdn.simpleicons.org/javascript/F7DF1E",
+        accentColor: "#F7DF1E",
+        color: "border-[#F7DF1E]/50",
+        text: "text-[#F7DF1E]",
+        bg: "bg-[#2A280E]",
+        functionalities: [
+          "Interações de interface e componentes dinâmicos",
+          "Integrações com APIs para dados em tempo real",
+          "Lógica de funil e eventos de conversão"
+        ]
+      },
+      {
+        id: "python",
+        name: "Python",
+        logoUrl: "https://cdn.simpleicons.org/python/3776AB",
+        accentColor: "#3776AB",
+        color: "border-[#3776AB]/50",
+        text: "text-[#3776AB]",
+        bg: "bg-[#0F1C2A]",
+        functionalities: [
+          "Automação de processos operacionais e marketing",
+          "Scripts para análise e enriquecimento de dados",
+          "Backoffice para produtividade e integrações internas"
+        ]
+      }
+    ]
+  },
 ];
+
+const ALL_APPS = CLUSTERS.flatMap((cluster) =>
+  cluster.apps.map((app) => ({
+    ...app,
+    clusterTitle: cluster.title,
+    glowType: cluster.glowType,
+  })),
+);
 
 function AppLogo({ app }: { app: EcosystemApp }) {
   return (
@@ -148,9 +223,8 @@ function AppLogo({ app }: { app: EcosystemApp }) {
 }
 
 export function InteractiveEcosystem() {
-  const [activeApp, setActiveApp] = useState<string | null>(null);
-  const selectedCluster = CLUSTERS.find((cluster) => cluster.apps.some((app) => app.id === activeApp));
-  const selectedApp = selectedCluster?.apps.find((app) => app.id === activeApp);
+  const [activeApp, setActiveApp] = useState<string>(ALL_APPS[0].id);
+  const selectedApp = ALL_APPS.find((app) => app.id === activeApp) ?? ALL_APPS[0];
 
   return (
     <section className="relative py-32 px-6 lg:min-h-screen flex flex-col items-center justify-center">
@@ -166,93 +240,51 @@ export function InteractiveEcosystem() {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* 3D App Ecosystem Visualization */}
-          <div className="relative h-[500px] w-full flex items-center justify-center">
-            {/* Pulsing center globe/core */}
-            <div className="absolute w-32 h-32 rounded-full bg-white/5 border border-white/10 flex items-center justify-center backdrop-blur-md z-10">
-               <span className="font-display font-bold text-xl tracking-widest text-white/80">DP.</span>
-               <div className="absolute inset-0 rounded-full bg-neon-blue/20 blur-xl -z-10 animate-pulse" />
+        <div className="grid lg:grid-cols-2 gap-16 items-start">
+          <div className="glass-panel rounded-3xl p-5 md:p-6 border border-white/10">
+            <p className="text-[11px] uppercase tracking-[0.28em] font-black text-white/40 mb-5">Aplicativos e Stack</p>
+            <div className="space-y-3 max-h-[560px] overflow-y-auto pr-1">
+              {ALL_APPS.map((app, index) => {
+                const isActive = activeApp === app.id;
+                return (
+                  <motion.button
+                    key={app.id}
+                    onClick={() => setActiveApp(app.id)}
+                    initial={{ opacity: 0, y: 14 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.35, delay: index * 0.03 }}
+                    className={cn(
+                      "w-full rounded-xl px-3 py-3 flex items-center gap-3 text-left border transition-all duration-300",
+                      app.color,
+                      isActive ? cn(app.bg, "shadow-[0_0_30px_rgba(0,0,0,0.35)]") : "bg-white/[0.02] hover:bg-white/[0.05]"
+                    )}
+                  >
+                    <AppLogo app={app} />
+                    <div className="min-w-0">
+                      <p className={cn("text-[10px] uppercase tracking-[0.2em] font-black opacity-70", app.text)}>
+                        {app.name.startsWith("Adobe") ? "Adobe" : "Web Tech"}
+                      </p>
+                      <p className="text-sm font-bold text-white truncate leading-tight">{app.name.replace("Adobe ", "")}</p>
+                      <p className="text-[10px] uppercase tracking-[0.15em] text-white/40 mt-1 truncate">{app.clusterTitle}</p>
+                    </div>
+                  </motion.button>
+                );
+              })}
             </div>
-
-            {CLUSTERS.map((cluster, cIndex) => {
-              const baseAngle = (cIndex / CLUSTERS.length) * Math.PI * 2 - Math.PI / 2;
-              const radiusX = window.innerWidth < 768 ? 145 : 250;
-              const radiusY = window.innerWidth < 768 ? 100 : 160; // Elliptical orbit
-
-              return (
-                <div key={cluster.id} className="absolute inset-0 flex items-center justify-center">
-                  {cluster.apps.map((app, aIndex) => {
-                    const offsetAngle = (aIndex - (cluster.apps.length - 1) / 2) * 0.4;
-                    const finalAngle = baseAngle + offsetAngle;
-                    
-                    const x = Math.cos(finalAngle) * radiusX;
-                    const y = Math.sin(finalAngle) * radiusY;
-
-                    const isActive = activeApp === app.id;
-                    const isFaded = !!activeApp && activeApp !== app.id;
-
-                    return (
-                      <motion.button
-                        key={app.id}
-                        onClick={() => setActiveApp(isActive ? null : app.id)}
-                        className={cn(
-                          "absolute w-[170px] md:w-[200px] h-16 rounded-xl px-3 flex items-center gap-3 transition-all duration-500 cursor-pointer overflow-hidden border",
-                          "hover:scale-105 hover:z-30 hover:shadow-[0_0_30px_rgba(255,255,255,0.1)]",
-                          app.color,
-                          isActive && "scale-105 z-20 shadow-[0_0_40px_rgba(0,0,0,0.5)]",
-                          isActive ? app.bg : "glass-panel",
-                          isFaded && "opacity-20 scale-90"
-                        )}
-                        initial={{ x: 0, y: 0, opacity: 0 }}
-                        animate={{
-                          x, 
-                          y, 
-                          opacity: isFaded ? 0.3 : 1,
-                        }}
-                        transition={{
-                          x: { type: "spring", stiffness: 50, damping: 15 },
-                          y: { type: "spring", stiffness: 50, damping: 15 }
-                        }}
-                        // @ts-ignore
-                        style={{
-                          transform: `translate(${x}px, ${y}px)`
-                        }}
-                      >
-                        <AppLogo app={app} />
-                        <div className="text-left min-w-0">
-                          <p className={cn("text-[10px] uppercase tracking-[0.2em] font-black opacity-60", app.text)}>
-                            Adobe
-                          </p>
-                          <p className="text-sm font-bold text-white truncate leading-tight">
-                            {app.name.replace("Adobe ", "")}
-                          </p>
-                        </div>
-                        {isActive && (
-                           <motion.div 
-                             layoutId="glow"
-                             className={cn("absolute inset-0 -z-10 rounded-xl blur-lg opacity-30", cluster.glowType)}
-                           />
-                        )}
-                      </motion.button>
-                    );
-                  })}
-                </div>
-              );
-            })}
           </div>
 
           {/* Diagnostic Panel */}
           <div className="relative min-h-[400px]">
             <AnimatePresence mode="wait">
-              {selectedApp && selectedCluster ? (
+              {selectedApp ? (
                 <motion.div
                   key={selectedApp.id}
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -20 }}
                   transition={{ duration: 0.4, ease: "easeOut" }}
-                  className={cn("glass-panel p-8 md:p-10 rounded-3xl h-full flex flex-col justify-center border-l-4", selectedCluster.glowType)}
+                  className={cn("glass-panel p-8 md:p-10 rounded-3xl h-full flex flex-col justify-center border-l-4", selectedApp.glowType)}
                   style={{ borderLeftColor: selectedApp.accentColor }}
                 >
                   <div className="inline-flex px-3 py-1 bg-white/5 border border-white/10 text-[10px] font-black uppercase tracking-widest mb-6 rounded-full w-fit" style={{ color: selectedApp.accentColor }}>
@@ -267,7 +299,7 @@ export function InteractiveEcosystem() {
                           {selectedApp.name}
                         </h3>
                         <p className="text-xs uppercase tracking-[0.2em] text-white/40 mt-2">
-                          {selectedCluster.title}
+                          {selectedApp.clusterTitle}
                         </p>
                       </div>
                     </div>
@@ -293,7 +325,7 @@ export function InteractiveEcosystem() {
                      <span className="text-3xl opacity-50 block mt-3">⚡️</span>
                   </div>
                   <h3 className="text-[11px] uppercase tracking-[0.3em] font-black text-[#00D1FF] mb-2">Análise Constante</h3>
-                  <p className="text-white/40 text-sm font-medium">Clique em um aplicativo Adobe ao lado para visualizar as funcionalidades que aplicamos em cada etapa.</p>
+                  <p className="text-white/40 text-sm font-medium">Clique em qualquer aplicativo ao lado para visualizar as funcionalidades que aplicamos em cada etapa.</p>
                 </motion.div>
               )}
             </AnimatePresence>

@@ -26,7 +26,7 @@ const CLUSTERS = [
       {
         id: "ai",
         name: "Adobe Illustrator",
-        logoUrl: "https://cdn.simpleicons.org/adobeillustrator/FF9A00",
+        logoUrl: "/icons/adobe-illustrator.svg",
         accentColor: "#FF9A00",
         color: "border-[#FF9A00]/50",
         text: "text-[#FF9A00]",
@@ -40,7 +40,7 @@ const CLUSTERS = [
       {
         id: "ps",
         name: "Adobe Photoshop",
-        logoUrl: "https://cdn.simpleicons.org/adobephotoshop/00A4FF",
+        logoUrl: "/icons/adobe-photoshop.svg",
         accentColor: "#00A4FF",
         color: "border-[#00A4FF]/50",
         text: "text-[#00A4FF]",
@@ -54,7 +54,7 @@ const CLUSTERS = [
       {
         id: "id",
         name: "Adobe InDesign",
-        logoUrl: "https://cdn.simpleicons.org/adobeindesign/FF3366",
+        logoUrl: "/icons/adobe-indesign.svg",
         accentColor: "#FF3366",
         color: "border-[#FF3366]/50",
         text: "text-[#FF3366]",
@@ -79,7 +79,7 @@ const CLUSTERS = [
       {
         id: "ae",
         name: "Adobe After Effects",
-        logoUrl: "https://cdn.simpleicons.org/adobeaftereffects/9999FF",
+        logoUrl: "/icons/adobe-after-effects.svg",
         accentColor: "#9999FF",
         color: "border-[#9999FF]/50",
         text: "text-[#9999FF]",
@@ -93,7 +93,7 @@ const CLUSTERS = [
       {
         id: "pr",
         name: "Adobe Premiere Pro",
-        logoUrl: "https://cdn.simpleicons.org/adobepremierepro/EA77FF",
+        logoUrl: "/icons/adobe-premiere-pro.svg",
         accentColor: "#EA77FF",
         color: "border-[#EA77FF]/50",
         text: "text-[#EA77FF]",
@@ -118,7 +118,7 @@ const CLUSTERS = [
       {
         id: "ac",
         name: "Adobe Acrobat",
-        logoUrl: "https://cdn.simpleicons.org/adobeacrobatreader/FF0000",
+        logoUrl: "/icons/adobe-acrobat.svg",
         accentColor: "#FF0000",
         color: "border-[#FF0000]/50",
         text: "text-[#FF0000]",
@@ -143,7 +143,7 @@ const CLUSTERS = [
       {
         id: "html",
         name: "HTML5",
-        logoUrl: "https://cdn.simpleicons.org/html5/E34F26",
+        logoUrl: "/icons/html5.svg",
         accentColor: "#E34F26",
         color: "border-[#E34F26]/50",
         text: "text-[#E34F26]",
@@ -157,7 +157,7 @@ const CLUSTERS = [
       {
         id: "css",
         name: "CSS3",
-        logoUrl: "https://cdn.simpleicons.org/css/1572B6",
+        logoUrl: "/icons/css3.svg",
         accentColor: "#1572B6",
         color: "border-[#1572B6]/50",
         text: "text-[#1572B6]",
@@ -171,7 +171,7 @@ const CLUSTERS = [
       {
         id: "javascript",
         name: "JavaScript",
-        logoUrl: "https://cdn.simpleicons.org/javascript/F7DF1E",
+        logoUrl: "/icons/javascript.svg",
         accentColor: "#F7DF1E",
         color: "border-[#F7DF1E]/50",
         text: "text-[#F7DF1E]",
@@ -185,7 +185,7 @@ const CLUSTERS = [
       {
         id: "python",
         name: "Python",
-        logoUrl: "https://cdn.simpleicons.org/python/3776AB",
+        logoUrl: "/icons/python.svg",
         accentColor: "#3776AB",
         color: "border-[#3776AB]/50",
         text: "text-[#3776AB]",
@@ -211,13 +211,7 @@ const ALL_APPS = CLUSTERS.flatMap((cluster) =>
 function AppLogo({ app }: { app: EcosystemApp }) {
   return (
     <div className={cn("w-10 h-10 rounded-lg border flex items-center justify-center bg-black/30", app.color)}>
-      <img
-        src={app.logoUrl}
-        alt={`${app.name} logo`}
-        className="w-5 h-5"
-        loading="lazy"
-        decoding="async"
-      />
+      <img src={app.logoUrl} alt={`${app.name} icon`} className="w-5 h-5" loading="lazy" decoding="async" />
     </div>
   );
 }
@@ -243,7 +237,7 @@ export function InteractiveEcosystem() {
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           <div className="glass-panel rounded-3xl p-5 md:p-6 border border-white/10">
             <p className="text-[11px] uppercase tracking-[0.28em] font-black text-white/40 mb-5">Aplicativos e Stack</p>
-            <div className="space-y-3 max-h-[560px] overflow-y-auto pr-1">
+            <div className="space-y-3 pr-1">
               {ALL_APPS.map((app, index) => {
                 const isActive = activeApp === app.id;
                 return (
@@ -255,7 +249,7 @@ export function InteractiveEcosystem() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.35, delay: index * 0.03 }}
                     className={cn(
-                      "w-full rounded-xl px-3 py-3 flex items-center gap-3 text-left border transition-all duration-300",
+                      "w-full rounded-xl px-3 py-3 flex items-center gap-3 text-left border transition-all duration-300 cursor-pointer",
                       app.color,
                       isActive ? cn(app.bg, "shadow-[0_0_30px_rgba(0,0,0,0.35)]") : "bg-white/[0.02] hover:bg-white/[0.05]"
                     )}

@@ -2,6 +2,17 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import { cn } from "../lib/utils";
 
+type EcosystemApp = {
+  id: string;
+  name: string;
+  logoUrl: string;
+  accentColor: string;
+  color: string;
+  text: string;
+  bg: string;
+  functionalities: string[];
+};
+
 const CLUSTERS = [
   {
     id: "design",
@@ -12,9 +23,48 @@ const CLUSTERS = [
     solution: "Arquitetura orientada à decisão (Illustrator), otimização visual de ativos (Photoshop) e design editorial persuasivo (InDesign).",
     glowType: "glow-green",
     apps: [
-      { id: "ai", name: "Illustrator", color: "border-[#FF9A00]/50", text: "text-[#FF9A00]", bg: "bg-[#261300]", label: "Ai" },
-      { id: "ps", name: "Photoshop", color: "border-[#00FFB2]/50", text: "text-[#00FFB2]", bg: "bg-[#001E18]", label: "Ps" },
-      { id: "id", name: "InDesign", color: "border-[#FF3366]/50", text: "text-[#FF3366]", bg: "bg-[#2D0014]", label: "Id" },
+      {
+        id: "ai",
+        name: "Adobe Illustrator",
+        logoUrl: "https://cdn.simpleicons.org/adobeillustrator/FF9A00",
+        accentColor: "#FF9A00",
+        color: "border-[#FF9A00]/50",
+        text: "text-[#FF9A00]",
+        bg: "bg-[#261300]",
+        functionalities: [
+          "Criação de identidade visual e sistemas de marca",
+          "Vetorização escalável para landing pages e materiais institucionais",
+          "Definição de grid, tipografia e linguagem visual consistente"
+        ]
+      },
+      {
+        id: "ps",
+        name: "Adobe Photoshop",
+        logoUrl: "https://cdn.simpleicons.org/adobephotoshop/00A4FF",
+        accentColor: "#00A4FF",
+        color: "border-[#00A4FF]/50",
+        text: "text-[#00A4FF]",
+        bg: "bg-[#001A2D]",
+        functionalities: [
+          "Tratamento de imagens para aumento de percepção de valor",
+          "Composição visual para criativos de ads e campanhas",
+          "Otimização de assets para performance sem perda de impacto"
+        ]
+      },
+      {
+        id: "id",
+        name: "Adobe InDesign",
+        logoUrl: "https://cdn.simpleicons.org/adobeindesign/FF3366",
+        accentColor: "#FF3366",
+        color: "border-[#FF3366]/50",
+        text: "text-[#FF3366]",
+        bg: "bg-[#2D0014]",
+        functionalities: [
+          "Diagramação de e-books e materiais ricos para autoridade",
+          "Padronização editorial para apresentação premium de conteúdo",
+          "Montagem de playbooks, propostas e apresentações comerciais"
+        ]
+      },
     ],
   },
   {
@@ -26,8 +76,34 @@ const CLUSTERS = [
     solution: "Vídeos de conversão de alto impacto (Premiere) e interações e micro-animações cognitivas (After Effects).",
     glowType: "glow-blue",
     apps: [
-      { id: "ae", name: "After Effects", color: "border-[#9999FF]/50", text: "text-[#9999FF]", bg: "bg-[#00005B]", label: "Ae" },
-      { id: "pr", name: "Premiere Pro", color: "border-[#EA77FF]/50", text: "text-[#EA77FF]", bg: "bg-[#2D0033]", label: "Pr" },
+      {
+        id: "ae",
+        name: "Adobe After Effects",
+        logoUrl: "https://cdn.simpleicons.org/adobeaftereffects/9999FF",
+        accentColor: "#9999FF",
+        color: "border-[#9999FF]/50",
+        text: "text-[#9999FF]",
+        bg: "bg-[#00005B]",
+        functionalities: [
+          "Microinterações orientadas a comportamento para retenção",
+          "Animações de interface para comunicar valor mais rápido",
+          "Storytelling visual com transições e motion branding"
+        ]
+      },
+      {
+        id: "pr",
+        name: "Adobe Premiere Pro",
+        logoUrl: "https://cdn.simpleicons.org/adobepremierepro/EA77FF",
+        accentColor: "#EA77FF",
+        color: "border-[#EA77FF]/50",
+        text: "text-[#EA77FF]",
+        bg: "bg-[#2D0033]",
+        functionalities: [
+          "Edição de vídeos de conversão para topo e meio de funil",
+          "Cortes estratégicos para manter atenção e reduzir abandono",
+          "Entrega de criativos em formatos otimizados para canais digitais"
+        ]
+      },
     ],
   },
   {
@@ -39,13 +115,42 @@ const CLUSTERS = [
     solution: "Automação de documentos seguros e contratos digitais rastreáveis (Acrobat), integrados a fluxos UX fluídos.",
     glowType: "glow-purple",
     apps: [
-      { id: "ac", name: "Acrobat", color: "border-[#FF0000]/50", text: "text-[#FF0000]", bg: "bg-[#320000]", label: "Ac" },
+      {
+        id: "ac",
+        name: "Adobe Acrobat",
+        logoUrl: "https://cdn.simpleicons.org/adobeacrobatreader/FF0000",
+        accentColor: "#FF0000",
+        color: "border-[#FF0000]/50",
+        text: "text-[#FF0000]",
+        bg: "bg-[#320000]",
+        functionalities: [
+          "Assinatura e validação de contratos digitais com rastreabilidade",
+          "Padronização de documentos de onboarding e compliance",
+          "Redução de fricção no fechamento comercial com fluxos seguros"
+        ]
+      },
     ],
   },
 ];
 
+function AppLogo({ app }: { app: EcosystemApp }) {
+  return (
+    <div className={cn("w-10 h-10 rounded-lg border flex items-center justify-center bg-black/30", app.color)}>
+      <img
+        src={app.logoUrl}
+        alt={`${app.name} logo`}
+        className="w-5 h-5"
+        loading="lazy"
+        decoding="async"
+      />
+    </div>
+  );
+}
+
 export function InteractiveEcosystem() {
-  const [activeCluster, setActiveCluster] = useState<string | null>(null);
+  const [activeApp, setActiveApp] = useState<string | null>(null);
+  const selectedCluster = CLUSTERS.find((cluster) => cluster.apps.some((app) => app.id === activeApp));
+  const selectedApp = selectedCluster?.apps.find((app) => app.id === activeApp);
 
   return (
     <section className="relative py-32 px-6 lg:min-h-screen flex flex-col items-center justify-center">
@@ -53,7 +158,7 @@ export function InteractiveEcosystem() {
       
       <div className="max-w-7xl mx-auto w-full">
         <div className="text-center mb-24">
-          <h2 className="text-4xl md:text-5xl font-display font-medium tracking-tight mb-6">
+          <h2 className="text-4xl md:text-6xl font-sans font-black leading-[0.9] tracking-tighter mb-6">
             O Ecossistema de <span className="text-gradient">Conversão</span>
           </h2>
           <p className="text-white/60 text-lg max-w-2xl mx-auto">
@@ -72,8 +177,8 @@ export function InteractiveEcosystem() {
 
             {CLUSTERS.map((cluster, cIndex) => {
               const baseAngle = (cIndex / CLUSTERS.length) * Math.PI * 2 - Math.PI / 2;
-              const radiusX = window.innerWidth < 768 ? 130 : 180;
-              const radiusY = window.innerWidth < 768 ? 90 : 120; // Elliptical orbit
+              const radiusX = window.innerWidth < 768 ? 145 : 250;
+              const radiusY = window.innerWidth < 768 ? 100 : 160; // Elliptical orbit
 
               return (
                 <div key={cluster.id} className="absolute inset-0 flex items-center justify-center">
@@ -84,18 +189,18 @@ export function InteractiveEcosystem() {
                     const x = Math.cos(finalAngle) * radiusX;
                     const y = Math.sin(finalAngle) * radiusY;
 
-                    const isActive = activeCluster === cluster.id;
-                    const isFaded = activeCluster && activeCluster !== cluster.id;
+                    const isActive = activeApp === app.id;
+                    const isFaded = !!activeApp && activeApp !== app.id;
 
                     return (
                       <motion.button
                         key={app.id}
-                        onClick={() => setActiveCluster(isActive ? null : cluster.id)}
+                        onClick={() => setActiveApp(isActive ? null : app.id)}
                         className={cn(
-                          "absolute w-16 h-16 rounded-xl flex flex-col items-center justify-center transition-all duration-500 cursor-pointer overflow-hidden border",
-                          "hover:scale-110 hover:z-30 hover:shadow-[0_0_30px_rgba(255,255,255,0.1)]",
+                          "absolute w-[170px] md:w-[200px] h-16 rounded-xl px-3 flex items-center gap-3 transition-all duration-500 cursor-pointer overflow-hidden border",
+                          "hover:scale-105 hover:z-30 hover:shadow-[0_0_30px_rgba(255,255,255,0.1)]",
                           app.color,
-                          isActive && "scale-110 z-20 shadow-[0_0_40px_rgba(0,0,0,0.5)]",
+                          isActive && "scale-105 z-20 shadow-[0_0_40px_rgba(0,0,0,0.5)]",
                           isActive ? app.bg : "glass-panel",
                           isFaded && "opacity-20 scale-90"
                         )}
@@ -114,9 +219,15 @@ export function InteractiveEcosystem() {
                           transform: `translate(${x}px, ${y}px)`
                         }}
                       >
-                        <span className={cn("font-black text-xl leading-none", app.text)}>
-                          {app.label}
-                        </span>
+                        <AppLogo app={app} />
+                        <div className="text-left min-w-0">
+                          <p className={cn("text-[10px] uppercase tracking-[0.2em] font-black opacity-60", app.text)}>
+                            Adobe
+                          </p>
+                          <p className="text-sm font-bold text-white truncate leading-tight">
+                            {app.name.replace("Adobe ", "")}
+                          </p>
+                        </div>
                         {isActive && (
                            <motion.div 
                              layoutId="glow"
@@ -134,43 +245,41 @@ export function InteractiveEcosystem() {
           {/* Diagnostic Panel */}
           <div className="relative min-h-[400px]">
             <AnimatePresence mode="wait">
-              {activeCluster ? (
+              {selectedApp && selectedCluster ? (
                 <motion.div
-                  key={activeCluster}
+                  key={selectedApp.id}
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -20 }}
                   transition={{ duration: 0.4, ease: "easeOut" }}
-                  className={cn("glass-panel p-8 md:p-10 rounded-3xl h-full flex flex-col justify-center border-l-4", CLUSTERS.find(c => c.id === activeCluster)?.glowType, `border-l-${activeCluster === 'design' ? '[#00FFB2]' : activeCluster === 'motion' ? '[#00D1FF]' : '[#7A5CFF]'}`)}
+                  className={cn("glass-panel p-8 md:p-10 rounded-3xl h-full flex flex-col justify-center border-l-4", selectedCluster.glowType)}
+                  style={{ borderLeftColor: selectedApp.accentColor }}
                 >
-                  <div className="inline-flex px-3 py-1 bg-white/5 border border-white/10 rounded-max text-[10px] font-black uppercase tracking-widest text-[#00D1FF] mb-6 rounded-full w-fit">
-                    Micro-Diagnóstico Estratégico
+                  <div className="inline-flex px-3 py-1 bg-white/5 border border-white/10 text-[10px] font-black uppercase tracking-widest mb-6 rounded-full w-fit" style={{ color: selectedApp.accentColor }}>
+                    Funcionalidades por Aplicativo
                   </div>
-                  
-                  {CLUSTERS.filter(c => c.id === activeCluster).map(cluster => (
-                    <div key={cluster.id}>
-                      <h3 className="text-3xl font-sans font-black tracking-tighter mb-8 leading-[0.9]">
-                        {cluster.title}
-                      </h3>
-                      
-                      <div className="space-y-6">
-                        <div className="border-l-4 border-[#00FFB2] pl-4 py-1 glass-panel bg-transparent border-t-0 border-r-0 border-b-0 rounded-none backdrop-blur-none">
-                          <p className="text-[#00FFB2] text-[10px] font-bold tracking-widest uppercase mb-2">Problema Comum</p>
-                          <p className="text-white/80 text-sm italic">"{cluster.problem}"</p>
-                        </div>
-                        
-                        <div className="border-l-4 border-white/20 pl-4 py-1">
-                          <p className="text-white/40 text-[10px] font-bold tracking-widest uppercase mb-1">Nosso Diagnóstico</p>
-                          <p className="text-white/60 text-sm font-medium">{cluster.diagnosis}</p>
-                        </div>
-                        
-                        <div className="border-l-4 border-[#00D1FF] pl-4 py-1 bg-[#00D1FF]/5 -ml-4 p-4 rounded-r-xl">
-                          <p className="text-[#00D1FF] text-[10px] font-bold tracking-widest uppercase mb-1">Solução DP Freela</p>
-                          <p className="text-white text-sm font-bold">{cluster.solution}</p>
-                        </div>
+
+                  <div>
+                    <div className="flex items-center gap-3 mb-6">
+                      <AppLogo app={selectedApp} />
+                      <div>
+                        <h3 className="text-3xl font-sans font-black tracking-tighter leading-[0.9]">
+                          {selectedApp.name}
+                        </h3>
+                        <p className="text-xs uppercase tracking-[0.2em] text-white/40 mt-2">
+                          {selectedCluster.title}
+                        </p>
                       </div>
                     </div>
-                  ))}
+
+                    <div className="space-y-4">
+                      {selectedApp.functionalities.map((item) => (
+                        <div key={item} className="border-l-4 pl-4 py-2 bg-white/[0.03] rounded-r-xl" style={{ borderLeftColor: selectedApp.accentColor }}>
+                          <p className="text-white/85 text-sm font-medium leading-relaxed">{item}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                 </motion.div>
               ) : (
                 <motion.div
@@ -184,7 +293,7 @@ export function InteractiveEcosystem() {
                      <span className="text-3xl opacity-50 block mt-3">⚡️</span>
                   </div>
                   <h3 className="text-[11px] uppercase tracking-[0.3em] font-black text-[#00D1FF] mb-2">Análise Constante</h3>
-                  <p className="text-white/40 text-sm font-medium">Selecione um grupo de ferramentas ao lado para entender nossa lógica de diagnóstico e atuação.</p>
+                  <p className="text-white/40 text-sm font-medium">Clique em um aplicativo Adobe ao lado para visualizar as funcionalidades que aplicamos em cada etapa.</p>
                 </motion.div>
               )}
             </AnimatePresence>

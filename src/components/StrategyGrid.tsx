@@ -17,7 +17,7 @@ export function StrategyGrid() {
     },
     {
       number: "03",
-      title: "Marcas, Estratégia e Respaldo",
+      title: "Marcas, Estratégia e Brand",
       description: "Sua marca não é só um logo, é um ativo. Unimos identidade visual premium à proteção de propriedade intelectual (PI) e adequação LGPD.",
       tags: ["Branding", "Legal Framework", "Naming"]
     }

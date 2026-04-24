@@ -44,6 +44,10 @@ export default function App() {
     return () => window.removeEventListener("hashchange", handleHashChange);
   }, []);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [currentHash]);
+
   if (currentHash === "#form-diagnostico") {
     return <DiagnosticoFormPage />;
   }

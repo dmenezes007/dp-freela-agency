@@ -43,15 +43,13 @@ export function Hero() {
            transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
            className="flex flex-col sm:flex-row gap-4"
         >
-          <button className="group relative px-8 py-4 bg-[#00FFB2]/10 border border-[#00FFB2]/50 text-[#00FFB2] rounded-xl font-bold tracking-widest text-[10px] uppercase overflow-hidden hover:bg-[#00FFB2]/20 transition-all duration-300">
-             <span className="relative flex items-center justify-center gap-2">
-               Iniciar Diagnóstico
-             </span>
-          </button>
-          
-          <button className="px-8 py-4 rounded-xl font-bold tracking-widest text-[10px] uppercase glass-panel text-white hover:bg-white/10 transition-colors">
+          <a href="#diagnostico" className="group relative px-8 py-4 bg-[#00FFB2]/10 border border-[#00FFB2]/50 text-[#00FFB2] rounded-xl font-bold tracking-widest text-[10px] uppercase overflow-hidden hover:bg-[#00FFB2]/20 transition-all duration-300 flex items-center justify-center gap-2">
+            Iniciar Diagnóstico
+          </a>
+
+          <a href="#ecossistema" className="px-8 py-4 rounded-xl font-bold tracking-widest text-[10px] uppercase glass-panel text-white hover:bg-white/10 transition-colors flex items-center justify-center">
             Ver Ecossistema
-          </button>
+          </a>
         </motion.div>
       </div>
     </section>

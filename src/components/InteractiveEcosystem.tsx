@@ -271,7 +271,7 @@ export function InteractiveEcosystem() {
   const selectedApp = ALL_APPS.find((app) => app.id === activeApp) ?? ALL_APPS[0];
 
   return (
-    <section className="relative py-32 px-6 lg:min-h-screen flex flex-col items-center justify-center">
+    <section id="ecossistema" className="relative py-32 px-6 lg:min-h-screen flex flex-col items-center justify-center scroll-mt-20">
       <div className="absolute top-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent" />
       
       <div className="max-w-7xl mx-auto w-full">

@@ -25,16 +25,17 @@ export function Footer() {
           Agende um diagnóstico com nosso time. Sem pitches genéricos. Apenas análise de gaps e potencial de conversão.
         </motion.p>
         
-        <motion.button
+        <motion.a
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           whileHover={{ scale: 1.05 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
+          href="#diagnostico"
           className="px-10 py-5 rounded-xl font-bold bg-[#00FFB2]/10 border border-[#00FFB2]/30 text-[#00FFB2] text-sm tracking-widest uppercase hover:shadow-[0_0_40px_rgba(0,255,178,0.2)] transition-all"
         >
           Agendar Diagnóstico
-        </motion.button>
+        </motion.a>
       </div>
 
       <div className="relative z-10 mt-24 -mx-6 px-6 md:px-10 h-12 bg-white/5 border-t border-white/10 flex items-center justify-between text-[9px] uppercase tracking-[0.2em] font-medium opacity-40">

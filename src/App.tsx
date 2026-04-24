@@ -8,6 +8,9 @@ import { Hero } from "./components/Hero";
 import { StrategyGrid } from "./components/StrategyGrid";
 import { InteractiveEcosystem } from "./components/InteractiveEcosystem";
 import { Footer } from "./components/Footer";
+import { Diagnostico } from "./components/Diagnostico";
+import { Compliance } from "./components/Compliance";
+import { CaseDigital } from "./components/CaseDigital";
 
 function Nav() {
   return (
@@ -16,14 +19,14 @@ function Nav() {
         <span className="font-bold tracking-tighter text-xl italic hidden sm:block">DP FREELA <span className="font-light opacity-50">AGENCY</span></span>
       </div>
       <div className="hidden lg:flex gap-10 text-[11px] uppercase tracking-[0.2em] font-medium opacity-60">
-        <a href="#" className="hover:opacity-100 transition-opacity">Diagnóstico</a>
-        <a href="#" className="hover:opacity-100 transition-opacity">Ecossistema</a>
-        <a href="#" className="hover:opacity-100 transition-opacity">Compliance</a>
-        <a href="#" className="text-[#00FFB2] opacity-100">Case Digital</a>
+        <a href="#diagnostico" className="hover:opacity-100 transition-opacity">Diagnóstico</a>
+        <a href="#ecossistema" className="hover:opacity-100 transition-opacity">Ecossistema</a>
+        <a href="#compliance" className="hover:opacity-100 transition-opacity">Compliance</a>
+        <a href="#case-digital" className="text-[#00FFB2] opacity-100 hover:opacity-100 transition-opacity">Case Digital</a>
       </div>
-      <button className="px-6 py-2 glass-panel border border-[#00FFB2]/40 text-[#00FFB2] text-[10px] uppercase font-bold tracking-widest hidden sm:block">
+      <a href="#diagnostico" className="px-6 py-2 glass-panel border border-[#00FFB2]/40 text-[#00FFB2] text-[10px] uppercase font-bold tracking-widest hidden sm:block">
         Start Project
-      </button>
+      </a>
     </nav>
   );
 }
@@ -35,8 +38,11 @@ export default function App() {
       <ParticlesBackground />
       <Hero />
       <StrategyGrid />
-      <div className="h-24" /> {/* Spacer */}
+      <Diagnostico />
+      <div className="h-12" />
       <InteractiveEcosystem />
+      <Compliance />
+      <CaseDigital />
       <Footer />
     </main>
   );

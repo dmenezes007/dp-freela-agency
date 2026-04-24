@@ -11,7 +11,8 @@ import { Footer } from "./components/Footer";
 import { Diagnostico } from "./components/Diagnostico";
 import { Compliance } from "./components/Compliance";
 import { CaseDigital } from "./components/CaseDigital";
-import { DiagnosticoForm } from "./components/DiagnosticoForm";
+import { DiagnosticoFormPage } from "./components/DiagnosticoFormPage";
+import { useState, useEffect } from "react";
 
 function Nav() {
   return (
@@ -33,6 +34,20 @@ function Nav() {
 }
 
 export default function App() {
+  const [currentHash, setCurrentHash] = useState(window.location.hash);
+
+  useEffect(() => {
+    const handleHashChange = () => {
+      setCurrentHash(window.location.hash);
+    };
+    window.addEventListener("hashchange", handleHashChange);
+    return () => window.removeEventListener("hashchange", handleHashChange);
+  }, []);
+
+  if (currentHash === "#form-diagnostico") {
+    return <DiagnosticoFormPage />;
+  }
+
   return (
     <main className="bg-background min-h-screen text-foreground selection:bg-[#00D1FF]/30 selection:text-white pt-20">
       <Nav />
@@ -40,7 +55,6 @@ export default function App() {
       <Hero />
       <StrategyGrid />
       <Diagnostico />
-      <DiagnosticoForm />
       <div className="h-12" />
       <InteractiveEcosystem />
       <Compliance />

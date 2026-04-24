@@ -137,42 +137,18 @@ export function DiagnosticoFormPage() {
                 />
               </label>
 
-              <div className="md:col-span-2 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pt-2">
-                <p className="text-sm text-white/35 leading-relaxed max-w-xl">
-                  Este formulário organiza o primeiro contato e acelera a leitura
-                  estratégica antes da conversa.
+              <div className="md:col-span-2 flex flex-col sm:flex-row sm:items-end gap-4 pt-2">
+                <p className="text-sm text-white/35 leading-relaxed flex-shrink-0">
+                  Este formulário organiza o primeiro contato e acelera a leitura estratégica antes da conversa.
                 </p>
                 <button
                   type="submit"
-                  className="px-8 py-4 rounded-2xl font-bold bg-[#00FFB2]/10 border border-[#00FFB2]/40 text-[#00FFB2] text-[10px] uppercase tracking-widest hover:bg-[#00FFB2]/20 transition-all"
+                  className="px-8 py-4 rounded-2xl font-bold bg-[#00FFB2]/10 border border-[#00FFB2]/40 text-[#00FFB2] text-[10px] uppercase tracking-widest hover:bg-[#00FFB2]/20 transition-all whitespace-nowrap"
                 >
                   Solicitar Diagnóstico
                 </button>
               </div>
             </form>
-
-            <div className="mt-12 pt-8 border-t border-white/10">
-              <p className="text-[9px] uppercase tracking-[0.2em] font-medium opacity-40 mb-4">
-                Dúvidas?
-              </p>
-              <p className="text-sm text-white/50 leading-relaxed">
-                Escreva para{" "}
-                <a
-                  href="mailto:contato@dpfreela.agency"
-                  className="text-[#00FFB2] hover:text-[#00FFB2]/80 transition-colors"
-                >
-                  contato@dpfreela.agency
-                </a>{" "}
-                ou volte para{" "}
-                <button
-                  onClick={handleNavigateBack}
-                  className="text-[#00FFB2] hover:text-[#00FFB2]/80 transition-colors cursor-pointer"
-                >
-                  a landing page
-                </button>
-                .
-              </p>
-            </div>
           </motion.div>
         </div>
       </section>

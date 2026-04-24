@@ -95,7 +95,7 @@ export function Compliance() {
             Quer blindar sua operação digital?
           </p>
           <a
-            href="#diagnostico"
+            href="#form-diagnostico"
             className="px-8 py-4 rounded-xl font-bold bg-[#7A5CFF]/10 border border-[#7A5CFF]/40 text-[#7A5CFF] text-[10px] uppercase tracking-widest hover:bg-[#7A5CFF]/20 transition-all"
           >
             Iniciar Diagnóstico

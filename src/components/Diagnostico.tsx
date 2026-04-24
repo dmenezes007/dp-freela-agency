@@ -91,7 +91,7 @@ export function Diagnostico() {
             Pronto para mapear seu potencial?
           </p>
           <a
-            href="mailto:contato@dpfreela.agency"
+            href="#form-diagnostico"
             className="px-8 py-4 rounded-xl font-bold bg-[#00D1FF]/10 border border-[#00D1FF]/40 text-[#00D1FF] text-[10px] uppercase tracking-widest hover:bg-[#00D1FF]/20 transition-all"
           >
             Agendar Diagnóstico

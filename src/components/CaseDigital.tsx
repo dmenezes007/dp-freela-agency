@@ -130,7 +130,7 @@ export function CaseDigital() {
             Quer resultados como esses?
           </p>
           <a
-            href="#diagnostico"
+            href="#form-diagnostico"
             className="px-8 py-4 rounded-xl font-bold bg-[#00FFB2]/10 border border-[#00FFB2]/40 text-[#00FFB2] text-[10px] uppercase tracking-widest hover:bg-[#00FFB2]/20 transition-all"
           >
             Iniciar Diagnóstico

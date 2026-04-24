@@ -31,7 +31,7 @@ export function Footer() {
           whileHover={{ scale: 1.05 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
-          href="#diagnostico"
+          href="#form-diagnostico"
           className="px-10 py-5 rounded-xl font-bold bg-[#00FFB2]/10 border border-[#00FFB2]/30 text-[#00FFB2] text-sm tracking-widest uppercase hover:shadow-[0_0_40px_rgba(0,255,178,0.2)] transition-all"
         >
           Agendar Diagnóstico

@@ -11,6 +11,7 @@ import { Footer } from "./components/Footer";
 import { Diagnostico } from "./components/Diagnostico";
 import { Compliance } from "./components/Compliance";
 import { CaseDigital } from "./components/CaseDigital";
+import { DiagnosticoForm } from "./components/DiagnosticoForm";
 
 function Nav() {
   return (
@@ -24,7 +25,7 @@ function Nav() {
         <a href="#compliance" className="hover:opacity-100 transition-opacity">Compliance</a>
         <a href="#case-digital" className="text-[#00FFB2] opacity-100 hover:opacity-100 transition-opacity">Case Digital</a>
       </div>
-      <a href="#diagnostico" className="px-6 py-2 glass-panel border border-[#00FFB2]/40 text-[#00FFB2] text-[10px] uppercase font-bold tracking-widest hidden sm:block">
+      <a href="#form-diagnostico" className="px-6 py-2 glass-panel border border-[#00FFB2]/40 text-[#00FFB2] text-[10px] uppercase font-bold tracking-widest hidden sm:block">
         Start Project
       </a>
     </nav>
@@ -39,6 +40,7 @@ export default function App() {
       <Hero />
       <StrategyGrid />
       <Diagnostico />
+      <DiagnosticoForm />
       <div className="h-12" />
       <InteractiveEcosystem />
       <Compliance />

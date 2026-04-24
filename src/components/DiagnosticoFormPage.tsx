@@ -138,12 +138,12 @@ export function DiagnosticoFormPage() {
               </label>
 
               <div className="md:col-span-2 flex flex-col sm:flex-row sm:items-end gap-4 pt-2">
-                <p className="text-sm text-white/35 leading-relaxed flex-shrink-0">
+                <p className="text-sm text-white/35 leading-relaxed flex-1">
                   Este formulário organiza o primeiro contato e acelera a leitura estratégica antes da conversa.
                 </p>
                 <button
                   type="submit"
-                  className="px-8 py-4 rounded-2xl font-bold bg-[#00FFB2]/10 border border-[#00FFB2]/40 text-[#00FFB2] text-[10px] uppercase tracking-widest hover:bg-[#00FFB2]/20 transition-all whitespace-nowrap"
+                  className="px-8 py-4 rounded-2xl font-bold bg-[#00FFB2]/10 border border-[#00FFB2]/40 text-[#00FFB2] text-[10px] uppercase tracking-widest hover:bg-[#00FFB2]/20 transition-all flex-shrink-0 whitespace-nowrap"
                 >
                   Solicitar Diagnóstico
                 </button>

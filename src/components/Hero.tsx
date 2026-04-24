@@ -14,7 +14,7 @@ export function Hero() {
            className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel mb-8 border border-white/10"
         >
           <span className="text-[12px] uppercase tracking-widest font-semibold text-[#00D1FF]">
-            Começamos por um Micro-Diagnóstico Estratégico
+            Começamos por um Diagnóstico Estratégico
           </span>
         </motion.div>
 

@@ -22,7 +22,7 @@ export function Footer() {
           transition={{ delay: 0.1 }}
           className="text-lg text-white/50 max-w-xl mx-auto mb-12"
         >
-          Agende um pré-diagnóstico com nosso time. Sem pitches genéricos. Apenas análise de gaps e potencial de conversão.
+          Agende um diagnóstico com nosso time. Sem pitches genéricos. Apenas análise de gaps e potencial de conversão.
         </motion.p>
         
         <motion.button

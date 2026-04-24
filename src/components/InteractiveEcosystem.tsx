@@ -34,7 +34,12 @@ const CLUSTERS = [
         functionalities: [
           "Criação de identidade visual e sistemas de marca",
           "Vetorização escalável para landing pages e materiais institucionais",
-          "Definição de grid, tipografia e linguagem visual consistente"
+          "Definição de grid, tipografia e linguagem visual consistente",
+          "Construção de brandbook e manual de identidade para escala",
+          "Criação de ícones e ilustrações exclusivas para interfaces e materiais",
+          "Design de logotipo e variações para aplicação digital e impressa",
+          "Composição de banners, thumbnails e elementos visuais de campanha",
+          "Padronização de assinatura visual para uso multicanal da marca"
         ]
       },
       {
@@ -48,7 +53,12 @@ const CLUSTERS = [
         functionalities: [
           "Tratamento de imagens para aumento de percepção de valor",
           "Composição visual para criativos de ads e campanhas",
-          "Otimização de assets para performance sem perda de impacto"
+          "Otimização de assets para performance sem perda de impacto",
+          "Manipulação de fotografia de produto com fundo neutro e destaque estratégico",
+          "Criação de mockups realistas para apresentação de marca e portfólio",
+          "Edição de avatares e imagens de perfil com identidade profissional",
+          "Desenvolvimento de banners para redes sociais com hierarquia visual clara",
+          "Geração de texturas e padrões gráficos exclusivos para identidade de campanha"
         ]
       },
       {
@@ -62,7 +72,12 @@ const CLUSTERS = [
         functionalities: [
           "Diagramação de e-books e materiais ricos para autoridade",
           "Padronização editorial para apresentação premium de conteúdo",
-          "Montagem de playbooks, propostas e apresentações comerciais"
+          "Montagem de playbooks, propostas e apresentações comerciais",
+          "Criação de catálogos e portfólios impressos ou digitais de alto padrão",
+          "Formatação de relatórios e dossiês de marca com layout profissional",
+          "Produção de kits de mídia e media kits para prospecção B2B",
+          "Diagramação de newsletters e PDFs de conteúdo para nutrição de leads",
+          "Montagem de decks de pitch com estrutura persuasiva e visual de impacto"
         ]
       },
     ],
@@ -87,7 +102,12 @@ const CLUSTERS = [
         functionalities: [
           "Microinterações orientadas a comportamento para retenção",
           "Animações de interface para comunicar valor mais rápido",
-          "Storytelling visual com transições e motion branding"
+          "Storytelling visual com transições e motion branding",
+          "Produção de intros e outros animados para vídeos e reels de marca",
+          "Animação de logotipo e elementos de identidade para uso digital",
+          "Criação de motion graphics para conteúdo explicativo e vídeos institucionais",
+          "Desenvolvimento de partículas e efeitos visuais para landing pages de alta conversão",
+          "Animação de infográficos e dados para apresentações e materiais de autoridade"
         ]
       },
       {
@@ -101,7 +121,12 @@ const CLUSTERS = [
         functionalities: [
           "Edição de vídeos de conversão para topo e meio de funil",
           "Cortes estratégicos para manter atenção e reduzir abandono",
-          "Entrega de criativos em formatos otimizados para canais digitais"
+          "Entrega de criativos em formatos otimizados para canais digitais",
+          "Produção de depoimentos e cases em vídeo com edição de autoridade",
+          "Montagem de reels e vídeos curtos para redes sociais e Meta Ads",
+          "Criação de VSLs (Video Sales Letters) para funis de vendas de alto valor",
+          "Edição de behind-the-scenes e conteúdo de bastidores para humanização da marca",
+          "Correção de cor e tratamento de imagem para padronização estética da comunicação"
         ]
       },
     ],
@@ -126,7 +151,12 @@ const CLUSTERS = [
         functionalities: [
           "Assinatura e validação de contratos digitais com rastreabilidade",
           "Padronização de documentos de onboarding e compliance",
-          "Redução de fricção no fechamento comercial com fluxos seguros"
+          "Redução de fricção no fechamento comercial com fluxos seguros",
+          "Geração e distribuição de propostas em PDF com segurança e branding",
+          "Criação de formulários PDF interativos para coleta de dados LGPD-compliant",
+          "Compressão e otimização de arquivos para envio ágil em fluxos comerciais",
+          "Proteção e controle de acesso a documentos sensíveis de clientes",
+          "Conversão de layouts e materiais para PDF acessível e imprimível"
         ]
       },
     ],
@@ -151,7 +181,12 @@ const CLUSTERS = [
         functionalities: [
           "Estrutura semântica para SEO e acessibilidade",
           "Arquitetura de conteúdo para páginas de conversão",
-          "Markup limpo para facilitar manutenção e escala"
+          "Markup limpo para facilitar manutenção e escala",
+          "Construção de landing pages otimizadas para geração de leads",
+          "Implementação de Open Graph e meta tags para compartilhamento social",
+          "Estruturação de schema markup para rich snippets no Google",
+          "Criação de templates HTML reutilizáveis para e-mails transacionais",
+          "Desenvolvimento de páginas institucionais com foco em autoridade e conversão"
         ]
       },
       {
@@ -165,7 +200,12 @@ const CLUSTERS = [
         functionalities: [
           "Design system com tokens visuais e consistência de interface",
           "Layouts responsivos para desktop, tablet e mobile",
-          "Estados visuais e animações orientadas à experiência"
+          "Estados visuais e animações orientadas à experiência",
+          "Implementação de variáveis CSS para customização rápida de temas de marca",
+          "Criação de microanimações CSS para retenção e engajamento sem dependências externas",
+          "Estilização de formulários e CTAs para maximizar taxa de clique",
+          "Otimização de performance visual com CSS modular e criticamente renderizado",
+          "Grid e flexbox para layouts editoriais complexos em páginas de venda"
         ]
       },
       {
@@ -179,7 +219,12 @@ const CLUSTERS = [
         functionalities: [
           "Interações de interface e componentes dinâmicos",
           "Integrações com APIs para dados em tempo real",
-          "Lógica de funil e eventos de conversão"
+          "Lógica de funil e eventos de conversão",
+          "Implementação de tracking de eventos para Meta Pixel e Google Tag Manager",
+          "Desenvolvimento de formulários inteligentes com validação e lógica condicional",
+          "Integração com webhooks para automações de CRM e notificações de lead",
+          "Scripts de A/B testing para otimização contínua de páginas de oferta",
+          "Manipulação de DOM para experiências personalizadas por segmento de tráfego"
         ]
       },
       {
@@ -193,7 +238,12 @@ const CLUSTERS = [
         functionalities: [
           "Automação de processos operacionais e marketing",
           "Scripts para análise e enriquecimento de dados",
-          "Backoffice para produtividade e integrações internas"
+          "Backoffice para produtividade e integrações internas",
+          "Geração automática de relatórios de performance para clientes via script",
+          "Web scraping para monitoramento de concorrentes e tendências de mercado",
+          "Automação de envio de e-mails e sequências de nutrição via API",
+          "Processamento e limpeza de bases de leads para segmentação de campanhas",
+          "Integrações entre plataformas via APIs REST com autenticação segura"
         ]
       }
     ]

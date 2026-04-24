@@ -25,7 +25,7 @@ export function Hero() {
           className="text-6xl md:text-8xl lg:text-[120px] font-sans font-black leading-[0.9] tracking-tighter mb-8"
         >
           NÃO <br className="hidden md:block"/>ENTREGAMOS<br/>
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/40">PEÇAS.</span>
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/40">TRABALHO.</span>
         </motion.h1>
 
         <motion.p

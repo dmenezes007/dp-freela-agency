@@ -13,7 +13,6 @@ function Nav() {
   return (
     <nav className="h-20 w-full fixed top-0 flex items-center justify-between px-6 lg:px-10 border-b border-white/10 z-50 bg-background/50 backdrop-blur-md">
       <div className="flex items-center gap-3">
-        <div className="w-8 h-8 bg-gradient-to-br from-[#00FFB2] to-[#7A5CFF] rounded-full"></div>
         <span className="font-bold tracking-tighter text-xl italic hidden sm:block">DP FREELA <span className="font-light opacity-50">AGENCY</span></span>
       </div>
       <div className="hidden lg:flex gap-10 text-[11px] uppercase tracking-[0.2em] font-medium opacity-60">

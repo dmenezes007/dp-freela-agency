@@ -60,7 +60,7 @@ export function DiagnosticoFormPage() {
                 Diagnóstico Guiado
               </p>
               <h1 className="text-4xl md:text-5xl font-sans font-black leading-[0.92] tracking-tighter mb-5">
-                Escolher a DP Freela Agency é trocar achismo por direção estratégica,
+                Escolher a <span className="text-[#00FFB2]">DP Freela Agency</span> é trocar achismo por direção estratégica,
                 com design, tecnologia e blindagem jurídica atuando no mesmo plano de
                 crescimento.
               </h1>
